@@ -8,7 +8,10 @@ Ajax pagination plugin for Shopify themes.
  - Fallsback gracefully when there is no javascript available.
 
 ## Demos
-Coming soon.
+
+Endless Scroll (default) https://ajaxify.myshopify.com/collections/all
+
+More coming soon
 
 ## Getting Started
 Ajaxify requires jQuery!
