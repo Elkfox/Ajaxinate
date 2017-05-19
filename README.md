@@ -34,17 +34,17 @@ Setup your collection or blog template, for example:
     <div class="row">
 
       <div class="EndlessScroll">
-      
+
         {% for product in collection.products %}
           {% include 'product-grid-item' %}
         {% endfor %}
-        
+
         {% if paginate.next %}
           <div class="pagination">
             <a href="{{ paginate.next.url }}">Loading More</a>
           </div>
         {% endif %}
-        
+
       </div>
 
     </div>
@@ -75,83 +75,83 @@ $(document).ready(function(){
 
 ## Settings
 ### linkParent
-  ###### Type
+  ##### Type
   String
-  ###### Default
+  ##### Default
   `.pagination`
-  ###### Description
+  ##### Description
   Set the selector of the pagination container. Should only be a class as the script will generate multiple.
 
 ---
 ### parentContainer
-  ###### Type
+  ##### Type
   String
-  ###### Default
+  ##### Default
   `#MainContent`
-  ###### Description
+  ##### Description
   Set the selector of the top level container. Can be class or id.
 
 ---
 ### endlessScrollContainer
-  ###### Type
+  ##### Type
   String
-  ###### Default
+  ##### Default
   `.EndlessScroll`
-  ###### Description
+  ##### Description
   Set the selector of the content container. Should only be a class as the script will generate multiple.
 
 ---
 ### endlessClickContainer
-  ###### Type
+  ##### Type
   String
-  ###### Default
+  ##### Default
   `.EndlessClick`
-  ###### Description
+  ##### Description
   Set the selector of the content container. Should only be a class as the script will generate multiple.
 
 ---
 ### endlessOffset
-  ###### Type
+  ##### Type
   Integer
-  ###### Default
+  ##### Default
   `0`
-  ###### Description
+  ##### Description
   Set the distance from the bottom of the page to fire the endless scroll, in pixels. The higher the number the sooner it will fire.
 
 ---
 ### ajaxinateContainer
-  ###### Type
+  ##### Type
   String
-  ###### Default
+  ##### Default
   `.Ajaxinate`
-  ###### Description
+  ##### Description
   Set the selector of the content container. Should only be a class as the script will generate multiple.
 
 ---
 ### ajaxinateLink
-  ###### Type
+  ##### Type
   String
-  ###### Default
+  ##### Default
   `.page a`
-  ###### Description
+  ##### Description
   Set the selector for the pagination links. Should only be a class as the script will generate multiple.
 
 ---
 ### fade
-  ###### Type
+  ##### Type
   String
-  ###### Default
+  ##### Default
   `fast`
-  ###### Description
+  ##### Description
   Set the speed of the fade animation.
 
 ---
 ### textChange
-  ###### Type
+  ##### Type
   String
-  ###### Default
+  ##### Default
   `Loading`
-  ###### Description
+  ##### Description
   Set the text string to change during the loading process.
 
 ---

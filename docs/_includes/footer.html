@@ -1,0 +1,28 @@
+<script src="{{ site.github.url }}/assets/js/smooth-scroll.js"></script>
+<script>
+$(window).on('scroll', function() {
+  var scroll = $(document).scrollTop()
+  var header = $('header').outerHeight()
+  if(scroll > header) {
+    $('aside.sidebar > div').addClass('fixed')
+  } else {
+    $('aside.sidebar > div').removeClass('fixed')
+  }
+  console.log(scroll + ' > '+ header )
+})
+console.log();
+
+
+$('.anchor').on('scrollSpy:enter', function() {
+  var id = $(this).attr('id')
+  $('.sidebar [href="#'+ id +'"]').addClass('active')
+	console.log('enter:', $(this).attr('id'))
+});
+$('.anchor').on('scrollSpy:exit', function() {
+  var id = $(this).attr('id')
+  $('.sidebar [href="#'+ id +'"]').removeClass('active')
+	console.log('exit:', $(this).attr('id'))
+});
+$('.anchor').scrollSpy()
+</script>
+</body>

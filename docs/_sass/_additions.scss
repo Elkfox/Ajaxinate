@@ -1,0 +1,55 @@
+header {
+  position: relative;
+  height: auto;
+  padding: 0 50px;
+  background: $colorOne;
+  color: $colorBackground;
+  .content {
+    z-index: 2;
+    position: relative;
+    padding: 100px 0;
+    width: 100%;
+    top: 50%;
+    a {
+      color: $colorBackground;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+    .button {
+      background: $colorBackground;
+      color: $colorTwo;
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      line-height: 1.5rem;
+      display: inline-block;
+      height: auto;
+      border: 0;
+      padding: ($gutter / 2) ($gutter * 2);
+    }
+  }
+}
+
+.triangle {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-style: solid;
+  border-width: 75vh 0 0 100vw;
+  border-color: transparent transparent transparent $colorTwo;
+}
+
+aside.sidebar {
+  padding: 50px;
+  .fixed {
+    position: fixed;
+    top: $gutter;
+  }
+}
+
+article.documentation {
+  padding: $gutter;
+  background-color: #fff;
+}
