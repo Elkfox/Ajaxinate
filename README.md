@@ -9,7 +9,9 @@ Ajax pagination plugin for Shopify themes.
 
 ## Demos
 
-Endless Scroll (default) https://ajaxify.myshopify.com/collections/all
+[Endless Scroll](https://ajaxify.myshopify.com/collections/all){:target="_blank"}
+[Endless Click](https://ajaxify.myshopify.com/collections/all?view=endless-click){:target="_blank"}
+[Endless Click](https://ajaxify.myshopify.com/collections/all?view=endless-click){:target="_blank"}
 
 More coming soon
 
