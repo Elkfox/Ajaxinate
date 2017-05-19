@@ -25,11 +25,13 @@ Setup your collection or blog template, for example:
 ```
 {% paginate collection.products by 3 %}
   <div id="MainContent" class="container">
-    <div class="row EndlessScroll">
+    <div class="row">
 
-      {% for product in collection.products %}
-        {% include 'product-grid-item' %}
-      {% endfor %}
+      <div class="EndlessScroll">
+        {% for product in collection.products %}
+          {% include 'product-grid-item' %}
+        {% endfor %}
+      </div>
 
       {% if paginate.next %}
         <div class="more">
