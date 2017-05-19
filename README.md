@@ -18,7 +18,7 @@ Add ajaxify.min.js to the assets folder of your shopify theme.
 Add ajaxify.min.js before the closing body tag
 
 ```
-<script type="text/javascript" src="{{ ajaxify.js | asset_url }}"></script>
+{{ 'ajaxify.min.js' | asset_url | script_tag }}
 ```
 
 Setup your collection or blog template, for example:
@@ -27,14 +27,14 @@ Setup your collection or blog template, for example:
   <div id="MainContent" class="container">
     <div class="row EndlessScroll">
 
-        {% for product in collection.products %}
-          {% include 'product-grid-item' %}
-        {% endfor %}
+      {% for product in collection.products %}
+        {% include 'product-grid-item' %}
+      {% endfor %}
 
-    	{% if paginate.next %}
+      {% if paginate.next %}
         <div class="more">
-          <p><a href="{{ paginate.next.url }}"><em>Loading More Products</em></a></p>
-    	  </div>
+          <a href="{{ paginate.next.url }}">Loading More</a>
+        </div>
       {% endif %}
 
     </div>
