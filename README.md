@@ -16,8 +16,6 @@ Ajax pagination plugin for Shopify themes.
 <a href="https://ajaxify.myshopify.com/collections/all?page=1&view=ajaxinate" target="_blank">Ajaxinate</a>
 
 
-More coming soon
-
 ## Getting Started
 Ajaxify requires jQuery!
 
