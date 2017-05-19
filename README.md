@@ -28,16 +28,18 @@ Setup your collection or blog template, for example:
     <div class="row">
 
       <div class="EndlessScroll">
+      
         {% for product in collection.products %}
           {% include 'product-grid-item' %}
         {% endfor %}
+        
+        {% if paginate.next %}
+          <div class="pagination">
+            <a href="{{ paginate.next.url }}">Loading More</a>
+          </div>
+        {% endif %}
+        
       </div>
-
-      {% if paginate.next %}
-        <div class="more">
-          <a href="{{ paginate.next.url }}">Loading More</a>
-        </div>
-      {% endif %}
 
     </div>
   </div>
