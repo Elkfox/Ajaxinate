@@ -1,0 +1,32 @@
+<article class="column l8 m12 s12 documentation">
+
+
+    {% for item in site.documentation %}
+      {% if item.category == 'features' %}
+        <h2 class="anchor" id="{{ item.handle }}">{{ item.title }}</h2>
+        {{ item.content }}
+      {% endif %}
+    {% endfor %}
+
+    {% for item in site.documentation %}
+      {% if item.category == 'demos' %}
+        <h2 class="anchor" id="{{ item.handle }}">{{ item.title }}</h2>
+        {{ item.content }}
+      {% endif %}
+    {% endfor %}
+
+    {% for item in site.documentation %}
+      {% if item.category == 'getting started' %}
+        <h2 class="anchor" id="{{ item.handle }}">{{ item.title }}</h2>
+        {{ item.content }}
+      {% endif %}
+    {% endfor %}
+
+    {% for item in site.documentation %}
+      {% if item.category == 'settings' %}
+        <h2 class="anchor" id="{{ item.handle }}">{{ item.title }}</h2>
+        {{ item.content }}
+      {% endif %}
+    {% endfor %}
+
+</article>
