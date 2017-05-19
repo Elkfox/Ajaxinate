@@ -18,7 +18,7 @@ Add ajaxify.min.js to the assets folder of your shopify theme.
 Add ajaxify.min.js before the closing body tag
 
 ```
-<script type="text/javascript" src="{{ ajaxify.js | asset_url }}"></script>
+{{ 'ajaxify.min.js' | asset_url | script_tag }}
 ```
 
 Setup your collection or blog template, for example:
