@@ -32,3 +32,5 @@ exclude:
 collections:
   documentation:
     title: Documentation
+sass:
+  sass_dir: _sass

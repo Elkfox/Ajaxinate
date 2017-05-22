@@ -54,6 +54,10 @@ $xl: 1450px;
 // Miscellaneous
 $transition: all .3s ease-out;
 
+// Icons
+$baseIconSize: 32px;
+$iconLinecap: square;
+
 // Mixins ===================================================================
 
 // Prefixer (See https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/addons/_prefixer.scss)
@@ -200,5 +204,6 @@ $transition: all .3s ease-out;
 @import "grid";
 @import "typography";
 @import "form";
-@import "additions";
 @import "syntax";
+@import "icons";
+@import "additions";
