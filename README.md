@@ -1,7 +1,7 @@
 # Ajaxify
 Ajax pagination plugin for Shopify themes.
 
-<a href="https:https://elkfox.github.io/Ajaxify/" target="_blank">View the demo and documentation to get started</a>
+<a href="https://elkfox.github.io/Ajaxify/" target="_blank">View the demo and documentation to get started</a>
 
 ### License
 
