@@ -1,4 +1,4 @@
-// Ajax Pagination
+/* Ajaxify v1 | Copyright (c) 2017 Elkfox Co Pty Ltd | By George Butter | MIT License | https://github.com/Elkfox/Ajaxify */
 
 ajaxify = function(settings) {
   settings = settings || {}

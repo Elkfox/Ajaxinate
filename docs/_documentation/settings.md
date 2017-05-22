@@ -3,6 +3,17 @@ title:  "Settings"
 handle: "settings"
 category: 'settings'
 ---
+If you wish to change the names of the selectors you can pass them in with the following settings.
+
+For example:
+{% highlight javascript %}
+$(document).ready(function(){
+  ajaxify({
+    linkParent: '.custom-pagination',
+    parentContainer: '#page-content'
+    });
+});
+{% endhighlight %}
 
 ### linkParent
 ##### Type

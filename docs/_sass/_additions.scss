@@ -20,13 +20,13 @@ header {
       background: $colorBackground;
       color: $colorTwo;
       font-size: 1.5rem;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      line-height: 1.5rem;
       display: inline-block;
+      margin-bottom: $gutter/3;
       height: auto;
       border: 0;
-      padding: ($gutter / 2) ($gutter * 2);
+    }
+    svg .fill{
+      fill: $colorWhite;
     }
   }
 }
@@ -36,9 +36,12 @@ header {
   right: 0;
   bottom: 0;
   left: 0;
-  border-style: solid;
-  border-width: 75vh 0 0 100vw;
-  border-color: transparent transparent transparent $colorTwo;
+  top: 0;
+  svg {
+    fill: $colorTwo;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 aside.sidebar {
