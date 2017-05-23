@@ -1,4 +1,16 @@
-/* Ajaxify v1 | Copyright (c) 2017 Elkfox Co Pty Ltd | By George Butter | MIT License | https://github.com/Elkfox/Ajaxify */
+/*==============================================================================
+ ___  _   _    _
+/   || | | |  | |
+\__  | | | |  | |  __
+/    |/  |/_) |/  /  \_/\/
+\___/|__/| \_/|__/\__/  /\_/
+              |\
+              |/
+Ajaxify v1.0
+Copyright (c) 2017 Elkfox Co Pty Ltd
+https://elkfox.com
+Project lead: George Butter
+==============================================================================*/
 
 ajaxify = function(settings) {
   settings = settings || {}
