@@ -9,7 +9,7 @@ h1, h2, h3, h4, h5, h6,
   font-family: 'Montserrat', Helvetica, Arial, sans-serif;
   line-height: $lineHeight;
   display: block;
-  margin-bottom: $gutter/3;
+  margin-bottom: $gutter/4;
   a {
     text-decoration: none;
   }
@@ -124,7 +124,7 @@ article.documentation {
     margin: $gutter 0 $gutter/2 0 ;
   }
   ol, ul {
-    margin-left: $gutter/2;
+    margin: 0 0 $gutter/2 $gutter/2.5;
     list-style: initial;
   }
 }

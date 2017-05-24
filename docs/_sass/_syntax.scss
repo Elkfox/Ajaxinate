@@ -44,7 +44,7 @@ code.highlighter-rouge {
   font-weight: 900;
   background: $colorDarkGray;
   color: $colorLightGray;
-  margin: ($gutter/2) (-$gutter);
+  margin: $gutter (-$gutter);
   padding: $gutter;
   overflow: scroll;
 

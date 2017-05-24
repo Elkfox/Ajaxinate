@@ -10,23 +10,58 @@ header {
     padding: 100px 0;
     width: 100%;
     top: 50%;
+    h1 {
+      line-height: 1.2;
+      margin-bottom: 0;
+      @include s() {
+        font-size: 3rem;
+      }
+    }
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
     a {
       color: $colorBackground;
       text-decoration: none;
       font-size: 0.9rem;
       font-weight: 400;
+      vertical-align: middle;
     }
     .button {
       background: $colorBackground;
       color: $colorTwo;
       font-size: 1.5rem;
       display: inline-block;
-      margin-bottom: $gutter/3;
-      height: auto;
+      margin-bottom: $gutter/2.5;
+      height: 65px;
+      line-height: 63px;
+      width: 300px;
+      max-width: 100%;
       border: 0;
+      @include s() {
+        font-size: 1.2rem;
+      }
     }
-    svg .fill{
+    p {
+      margin-bottom: 0;
+    }
+    svg .fill {
       fill: $colorWhite;
+    }
+    svg.github, svg.shopify, svg.heart {
+      height: 0.9rem;
+      width: 0.9rem;
+    }
+    svg.shopify {
+      margin-left: 0.75rem;
+      @include s() {
+        margin-left: 0;
+      }
+    }
+    svg.elkfox {
+      height: 2rem;
+      width: auto;
     }
   }
 }
@@ -55,4 +90,12 @@ aside.sidebar {
 article.documentation {
   padding: $gutter;
   background-color: #fff;
+  h2:first-of-type {
+    margin-top: 0;
+  }
+}
+
+// Overrides
+.icon {
+  line-height: 1;
 }
