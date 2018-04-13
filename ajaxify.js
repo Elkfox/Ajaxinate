@@ -26,6 +26,7 @@ ajaxify = function(settings) {
   var ajaxinateLink = settings.ajaxinateLink || '.page a' // Class Selector for ajax pagination links
   var fade = settings.fade || 'fast' // fade speed
   var textChange = settings.textChange || 'Loading' // Text whilst loading content
+  const callback = settings.callback || false
 
   var linkElem;
   var contentContainer;
@@ -41,6 +42,8 @@ ajaxify = function(settings) {
         dataType: 'html',
         url: moreURL,
         success: function(data) {
+          if(callback)
+            callback(data)
           if (pageType == 'ajax') {
             $(ajaxinateContainer).not('[data-page="'+pageNumber+'"]').hide();
             history.pushState({}, pageNumber, moreURL);
