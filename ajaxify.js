@@ -42,8 +42,6 @@ ajaxify = function(settings) {
         dataType: 'html',
         url: moreURL,
         success: function(data) {
-          if(callback)
-            callback(data)
           if (pageType == 'ajax') {
             $(ajaxinateContainer).not('[data-page="'+pageNumber+'"]').hide();
             history.pushState({}, pageNumber, moreURL);
@@ -58,6 +56,10 @@ ajaxify = function(settings) {
             $.ajaxinationClick();
           } else if (pageType == 'endlessClick') {
             $.endlessClick();
+          }
+          $(document).trigger('ajaxify:updated', [data]);
+          if(callback && typeof(callback) === 'function') {
+            callback(data);
           }
         }
       });
