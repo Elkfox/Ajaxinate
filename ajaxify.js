@@ -26,6 +26,7 @@ ajaxify = function(settings) {
   var ajaxinateLink = settings.ajaxinateLink || '.page a' // Class Selector for ajax pagination links
   var fade = settings.fade || 'fast' // fade speed
   var textChange = settings.textChange || 'Loading' // Text whilst loading content
+  const callback = settings.callback || false
 
   var linkElem;
   var contentContainer;
@@ -55,6 +56,10 @@ ajaxify = function(settings) {
             $.ajaxinationClick();
           } else if (pageType == 'endlessClick') {
             $.endlessClick();
+          }
+          $(document).trigger('ajaxify:updated', [data]);
+          if(callback && typeof(callback) === 'function') {
+            callback(data);
           }
         }
       });
