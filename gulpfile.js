@@ -141,10 +141,10 @@ gulp.task('release', function (callback) {
     'license',
     'changelog',
     'build',
-    // 'commit-changes',
-    // 'push-changes',
-    // 'create-new-tag',
-    // 'github-release',
+    'commit-changes',
+    'push-changes',
+    'create-new-tag',
+    'github-release',
     function (error) {
       if (error) {
         console.log(error.message);
