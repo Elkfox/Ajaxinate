@@ -56,7 +56,6 @@ Ajaxinate.prototype.initialize = function initializeTheCorrectFunctionsBasedOnTh
   }
 };
 
-Ajaxinate.prototype.buildEndlessScrollEventListeners = function() {
 Ajaxinate.prototype.addScrollListeners = function addEventListenersForScrolling() {
   if (this.paginationElement) {
     document.addEventListener("scroll", this.checkIfPaginationInView);
@@ -101,7 +100,6 @@ Ajaxinate.prototype.checkIfPaginationInView = function handleScrollEvent() {
 
 Ajaxinate.prototype.loadMore = function getTheHtmlOfTheNextPageWithAnAjaxRequest() {
   this.request = new XMLHttpRequest();
-  this.request.onreadystatechange = function() {
   this.request.onreadystatechange = function success() {
     if (this.request.readyState === 4 && this.request.status === 200) {
       const newContainer = this.request.responseXML.querySelectorAll(this.settings.container)[0];
