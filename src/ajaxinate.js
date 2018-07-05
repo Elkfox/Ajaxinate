@@ -29,7 +29,7 @@ const Ajaxinate = function ajaxinateConstructor(config) {
     container: '.AjaxinateLoop',
     offset: 0,
     loadingText: 'Loading',
-    callback: null
+    callback: null,
   };
   // Merge configs
   if (settings) {
