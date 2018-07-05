@@ -21,6 +21,12 @@
     "gulp-util": "^3.0.8",
     "run-sequence": "^2.2.1"
   },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true
+    }
+  },
   "dependencies": {
     "gulp-env": "^0.4.0"
   },
