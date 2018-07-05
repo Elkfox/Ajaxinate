@@ -30,7 +30,6 @@ const Ajaxinate = function ajaxinateConstructor(config) {
     offset: 0,
     loadingText: 'Loading',
     callback: null
-  }
   };
   // Merge configs
   if (settings) {
