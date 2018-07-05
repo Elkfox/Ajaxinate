@@ -42,7 +42,7 @@ const Ajaxinate = function ajaxinateConstructor(config) {
   this.containerElement = document.querySelector(this.settings.container);
   this.paginationElement = document.querySelector(this.settings.pagination);
 
-  this.settings.method ? this.initialize() : console.error('Ajaxinate: No method provided, expected: click, scroll, or, ajaxinate');
+  this.initialize();
 };
 
 Ajaxinate.prototype.initialize = function initializeTheCorrectFunctionsBasedOnTheMethod() {
@@ -52,8 +52,7 @@ Ajaxinate.prototype.initialize = function initializeTheCorrectFunctionsBasedOnTh
       click: this.addClickListener,
       scroll: this.addScrollListeners,
     };
-    return initializers[this.settings.method]();
-    console.error('Ajaxinate: container element "'+this.settings.container+'" not found!');
+    initializers[this.settings.method]();
   }
 };
 
@@ -63,8 +62,6 @@ Ajaxinate.prototype.addScrollListeners = function addEventListenersForScrolling(
     document.addEventListener("scroll", this.checkIfPaginationInView);
     window.addEventListener("resize", this.checkIfPaginationInView);
     window.addEventListener("orientationchange", this.checkIfPaginationInView);
-    return;
-    console.error('Ajaxinate: pagination element "'+this.settings.pagination+'" not found!');
   }
 };
 
@@ -75,15 +72,11 @@ Ajaxinate.prototype.addClickListener = function addEventListenerForClicking() {
     if(typeof(this.nextPageLinkElement) !== 'undefined') {
       this.nextPageLinkElement.addEventListener('click', this.stopMultipleClicks);
     }
-    return;
-    console.error('Ajaxinate: pagination element "'+this.settings.pagination+'" not found!');
   }
 };
 
 Ajaxinate.prototype.stopMultipleClicks = function handleClickEvent(event) {
   event.preventDefault();
-  // We still want to prevent default therefore we do not want to remove the event listener
-  // but do not want to allow the user to fire multiple requests.
   if (this.clickActive) {
     this.nextPageLinkElement.innerText = this.settings.loadingText;
     this.nextPageUrl = this.nextPageLinkElement.href;
