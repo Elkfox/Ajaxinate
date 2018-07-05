@@ -65,7 +65,7 @@ Ajaxinate.prototype.addScrollListeners = function addEventListenersForScrolling(
 
 Ajaxinate.prototype.addClickListener = function addEventListenerForClicking() {
   if (this.paginationElement) {
-    this.nextPageLinkElement = this.paginationElement.getElementsByTagName('a')[0];
+    this.nextPageLinkElement = this.paginationElement.querySelector('a');
     this.clickActive = true;
     if(typeof(this.nextPageLinkElement) !== 'undefined') {
       this.nextPageLinkElement.addEventListener('click', this.stopMultipleClicks);
@@ -87,6 +87,7 @@ Ajaxinate.prototype.stopMultipleClicks = function handleClickEvent(event) {
     this.nextPageLinkElement = this.paginationElement.getElementsByTagName('a')[0];
     if(this.nextPageLinkElement) {
 Ajaxinate.prototype.checkIfPaginationInView = function handleScrollEvent() {
+    this.nextPageLinkElement = this.paginationElement.querySelector('a');
     document.removeEventListener('scroll', this.checkIfPaginationInView);
     window.removeEventListener('resize', this.checkIfPaginationInView);
     window.removeEventListener('orientationchange', this.checkIfPaginationInView);
