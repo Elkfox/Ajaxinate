@@ -63,7 +63,7 @@ Ajaxinate.prototype.buildEndlessScrollEventListeners = function() {
     document.addEventListener("scroll", this.checkIfPaginationInView);
     window.addEventListener("resize", this.checkIfPaginationInView);
     window.addEventListener("orientationchange", this.checkIfPaginationInView);
-  } else {
+    return;
     console.error('Ajaxinate: pagination element "'+this.settings.pagination+'" not found!');
   }
 };
@@ -75,7 +75,7 @@ Ajaxinate.prototype.buildEndlessClickEventListeners = function() {
     if(typeof(this.nextPageLinkElement) !== 'undefined') {
       this.nextPageLinkElement.addEventListener('click', this.stopMultipleClicks);
     }
-  } else {
+    return;
     console.error('Ajaxinate: pagination element "'+this.settings.pagination+'" not found!');
   }
 };
