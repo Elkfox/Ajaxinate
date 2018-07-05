@@ -57,9 +57,9 @@ Ajaxinate.prototype.initialize = function initializeTheCorrectFunctionsBasedOnTh
 
 Ajaxinate.prototype.addScrollListeners = function addEventListenersForScrolling() {
   if (this.paginationElement) {
-    document.addEventListener("scroll", this.checkIfPaginationInView);
-    window.addEventListener("resize", this.checkIfPaginationInView);
-    window.addEventListener("orientationchange", this.checkIfPaginationInView);
+    document.addEventListener('scroll', this.checkIfPaginationInView);
+    window.addEventListener('resize', this.checkIfPaginationInView);
+    window.addEventListener('orientationchange', this.checkIfPaginationInView);
   }
 };
 
@@ -85,11 +85,11 @@ Ajaxinate.prototype.stopMultipleClicks = function handleClickEvent(event) {
 
   if (((this.paginationElement.getBoundingClientRect().top <= window.innerHeight) - this.settings.offset && (this.paginationElement.getBoundingClientRect().bottom + this.settings.offset) >= 0)) {
     this.nextPageLinkElement = this.paginationElement.getElementsByTagName('a')[0];
-    document.removeEventListener("scroll", this.checkIfPaginationInView);
-    window.removeEventListener("resize", this.checkIfPaginationInView);
-    window.removeEventListener("orientationchange", this.checkIfPaginationInView);
     if(this.nextPageLinkElement) {
 Ajaxinate.prototype.checkIfPaginationInView = function handleScrollEvent() {
+    document.removeEventListener('scroll', this.checkIfPaginationInView);
+    window.removeEventListener('resize', this.checkIfPaginationInView);
+    window.removeEventListener('orientationchange', this.checkIfPaginationInView);
       this.nextPageLinkElement.innerText = this.settings.loadingText;
       this.nextPageUrl = this.nextPageLinkElement.href;
       this.loadMore();
