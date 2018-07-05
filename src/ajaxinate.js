@@ -89,9 +89,9 @@ Ajaxinate.prototype.checkIfPaginationInView = function handleScrollEvent() {
   const bottom = this.paginationElement.getBoundingClientRect().bottom + this.settings.offset;
   if (top <= window.innerHeight && bottom >= 0) {
     this.nextPageLinkElement = this.paginationElement.querySelector('a');
-    document.removeEventListener('scroll');
-    window.removeEventListener('resize');
-    window.removeEventListener('orientationchange');
+    document.removeEventListener('scroll', this.checkIfPaginationInView);
+    window.removeEventListener('resize', this.checkIfPaginationInView);
+    window.removeEventListener('orientationchange', this.checkIfPaginationInView);
     if (this.nextPageLinkElement) {
       this.nextPageLinkElement.innerText = this.settings.loadingText;
       this.nextPageUrl = this.nextPageLinkElement.href;
@@ -121,11 +121,13 @@ Ajaxinate.prototype.loadMore = function getTheHtmlOfTheNextPageWithAnAjaxRequest
 
 Ajaxinate.prototype.destroy = function removeEventListenersAndRemoveThis() {
   const destroyers = {
-    click: this.nextPageLinkElement.removeEventListener('click'),
+    click: function removeClickListener() {
+      this.nextPageLinkElement.addEventListener('click', this.stopMultipleClicks);
+    },
     scroll: function removeScrollListeners() {
-      document.removeEventListener('scroll');
-      window.removeEventListener('resize');
-      window.removeEventListener('orientationchange');
+      document.removeEventListener('scroll', this.checkIfPaginationInView);
+      window.removeEventListener('resize', this.checkIfPaginationInView);
+      window.removeEventListener('orientationchange', this.checkIfPaginationInView);
     },
   };
   destroyers[this.settings.method]();
