@@ -47,8 +47,8 @@ const Ajaxinate = function ajaxinateConstructor(config) {
 
 Ajaxinate.prototype.initialize = function initializeTheCorrectFunctionsBasedOnTheMethod() {
 
-  if(this.containerElement) {
     var initializers = {
+  if (this.containerElement) {
       click: this.buildEndlessClickEventListeners,
       scroll: this.buildEndlessScrollEventListeners,
       ajaxinate: this.buildAjaxinateEventListeners
@@ -59,7 +59,7 @@ Ajaxinate.prototype.initialize = function initializeTheCorrectFunctionsBasedOnTh
 };
 
 Ajaxinate.prototype.buildEndlessScrollEventListeners = function() {
-  if(this.paginationElement) {
+  if (this.paginationElement) {
     document.addEventListener("scroll", this.checkIfPaginationInView);
     window.addEventListener("resize", this.checkIfPaginationInView);
     window.addEventListener("orientationchange", this.checkIfPaginationInView);
@@ -69,7 +69,7 @@ Ajaxinate.prototype.buildEndlessScrollEventListeners = function() {
 };
 
 Ajaxinate.prototype.buildEndlessClickEventListeners = function() {
-  if(this.paginationElement) {
+  if (this.paginationElement) {
     this.nextPageLinkElement = this.paginationElement.getElementsByTagName('a')[0];
     this.clickActive = true;
     if(typeof(this.nextPageLinkElement) !== 'undefined') {
@@ -84,7 +84,7 @@ Ajaxinate.prototype.stopMultipleClicks = function(event) {
   event.preventDefault();
   // We still want to prevent default therefore we do not want to remove the event listener
   // but do not want to allow the user to fire multiple requests.
-  if(this.clickActive) {
+  if (this.clickActive) {
     this.nextPageLinkElement.innerText = this.settings.loadingText;
     this.nextPageUrl = this.nextPageLinkElement.href;
     this.clickActive = false;
@@ -109,12 +109,12 @@ Ajaxinate.prototype.checkIfPaginationInView = function() {
 Ajaxinate.prototype.loadMore = function getTheHtmlOfTheNextPageWithAnAjaxRequest() {
   this.request = new XMLHttpRequest();
   this.request.onreadystatechange = function() {
-    if(this.request.readyState === 4 && this.request.status === 200) {
       var newContainer = this.request.responseXML.querySelectorAll(this.settings.container)[0];
       var newPagination = this.request.responseXML.querySelectorAll(this.settings.pagination)[0];
+    if (this.request.readyState === 4 && this.request.status === 200) {
       this.containerElement.insertAdjacentHTML('beforeend', newContainer.innerHTML);
       this.paginationElement.innerHTML = newPagination.innerHTML;
-      if(this.settings.callback && typeof(this.settings.callback) === 'function') {
+      if (this.settings.callback && typeof(this.settings.callback) === 'function') {
         this.settings.callback(this.request.responseXML);
       }
       this.initialize();
