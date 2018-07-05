@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Elkfox/Ajaxinate.svg?branch=master)](https://travis-ci.org/Elkfox/Ajaxinate)
+
 # Ajaxinate
 Ajax pagination plugin for Shopify themes.
 
