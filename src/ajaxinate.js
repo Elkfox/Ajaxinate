@@ -48,7 +48,6 @@ const Ajaxinate = function ajaxinateConstructor(config) {
 Ajaxinate.prototype.initialize = function initializeTheCorrectFunctionsBasedOnTheMethod() {
   if (this.containerElement) {
     const initializers = {
-      ajaxinate: this.buildAjaxinateEventListeners,
       click: this.addClickListener,
       scroll: this.addScrollListeners,
     };
