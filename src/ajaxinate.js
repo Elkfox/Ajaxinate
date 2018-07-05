@@ -83,9 +83,11 @@ Ajaxinate.prototype.stopMultipleClicks = function handleClickEvent(event) {
   }
 };
 
-  if (((this.paginationElement.getBoundingClientRect().top <= window.innerHeight) - this.settings.offset && (this.paginationElement.getBoundingClientRect().bottom + this.settings.offset) >= 0)) {
     this.nextPageLinkElement = this.paginationElement.getElementsByTagName('a')[0];
 Ajaxinate.prototype.checkIfPaginationInView = function handleScrollEvent() {
+  const top = this.paginationElement.getBoundingClientRect().top - this.settings.offset;
+  const bottom = this.paginationElement.getBoundingClientRect().bottom + this.settings.offset;
+  if (top <= window.innerHeight && bottom >= 0) {
     this.nextPageLinkElement = this.paginationElement.querySelector('a');
     document.removeEventListener('scroll', this.checkIfPaginationInView);
     window.removeEventListener('resize', this.checkIfPaginationInView);
