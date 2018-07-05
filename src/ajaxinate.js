@@ -34,8 +34,8 @@ const Ajaxinate = function ajaxinateConstructor(config) {
   // Merge configs
   this.settings = Object.assign(defaultSettings, settings);
 
-  this.buildEndlessScrollEventListeners = this.buildEndlessScrollEventListeners.bind(this);
-  this.buildEndlessClickEventListeners = this.buildEndlessClickEventListeners.bind(this);
+  this.addScrollListeners = this.addScrollListeners.bind(this);
+  this.addClickListener = this.addClickListener.bind(this);
   this.checkIfPaginationInView = this.checkIfPaginationInView.bind(this);
   this.stopMultipleClicks = this.stopMultipleClicks.bind(this);
 
@@ -46,12 +46,11 @@ const Ajaxinate = function ajaxinateConstructor(config) {
 };
 
 Ajaxinate.prototype.initialize = function initializeTheCorrectFunctionsBasedOnTheMethod() {
-
   if (this.containerElement) {
     const initializers = {
-      click: this.buildEndlessClickEventListeners,
-      scroll: this.buildEndlessScrollEventListeners,
       ajaxinate: this.buildAjaxinateEventListeners,
+      click: this.addClickListener,
+      scroll: this.addScrollListeners,
     };
     return initializers[this.settings.method]();
     console.error('Ajaxinate: container element "'+this.settings.container+'" not found!');
@@ -59,6 +58,7 @@ Ajaxinate.prototype.initialize = function initializeTheCorrectFunctionsBasedOnTh
 };
 
 Ajaxinate.prototype.buildEndlessScrollEventListeners = function() {
+Ajaxinate.prototype.addScrollListeners = function addEventListenersForScrolling() {
   if (this.paginationElement) {
     document.addEventListener("scroll", this.checkIfPaginationInView);
     window.addEventListener("resize", this.checkIfPaginationInView);
@@ -68,7 +68,7 @@ Ajaxinate.prototype.buildEndlessScrollEventListeners = function() {
   }
 };
 
-Ajaxinate.prototype.buildEndlessClickEventListeners = function() {
+Ajaxinate.prototype.addClickListener = function addEventListenerForClicking() {
   if (this.paginationElement) {
     this.nextPageLinkElement = this.paginationElement.getElementsByTagName('a')[0];
     this.clickActive = true;
@@ -80,7 +80,7 @@ Ajaxinate.prototype.buildEndlessClickEventListeners = function() {
   }
 };
 
-Ajaxinate.prototype.stopMultipleClicks = function(event) {
+Ajaxinate.prototype.stopMultipleClicks = function handleClickEvent(event) {
   event.preventDefault();
   // We still want to prevent default therefore we do not want to remove the event listener
   // but do not want to allow the user to fire multiple requests.
@@ -92,13 +92,13 @@ Ajaxinate.prototype.stopMultipleClicks = function(event) {
   }
 };
 
-Ajaxinate.prototype.checkIfPaginationInView = function() {
   if (((this.paginationElement.getBoundingClientRect().top <= window.innerHeight) - this.settings.offset && (this.paginationElement.getBoundingClientRect().bottom + this.settings.offset) >= 0)) {
     this.nextPageLinkElement = this.paginationElement.getElementsByTagName('a')[0];
     document.removeEventListener("scroll", this.checkIfPaginationInView);
     window.removeEventListener("resize", this.checkIfPaginationInView);
     window.removeEventListener("orientationchange", this.checkIfPaginationInView);
     if(this.nextPageLinkElement) {
+Ajaxinate.prototype.checkIfPaginationInView = function handleScrollEvent() {
       this.nextPageLinkElement.innerText = this.settings.loadingText;
       this.nextPageUrl = this.nextPageLinkElement.href;
       this.loadMore();
@@ -109,6 +109,7 @@ Ajaxinate.prototype.checkIfPaginationInView = function() {
 Ajaxinate.prototype.loadMore = function getTheHtmlOfTheNextPageWithAnAjaxRequest() {
   this.request = new XMLHttpRequest();
   this.request.onreadystatechange = function() {
+  this.request.onreadystatechange = function success() {
     if (this.request.readyState === 4 && this.request.status === 200) {
       const newContainer = this.request.responseXML.querySelectorAll(this.settings.container)[0];
       const newPagination = this.request.responseXML.querySelectorAll(this.settings.pagination)[0];
@@ -119,7 +120,6 @@ Ajaxinate.prototype.loadMore = function getTheHtmlOfTheNextPageWithAnAjaxRequest
       }
       this.initialize();
     }
-
   }.bind(this);
   this.request.open('GET', this.nextPageUrl);
   this.request.responseType = 'document';
