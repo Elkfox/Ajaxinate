@@ -1,3 +1,5 @@
+'use strict';
+
 /* ===================================================================================== @preserve =
  ___  _   _    _
 /   || | | |  | |
@@ -15,8 +17,8 @@ Project lead: George Butter
 MIT License
 ================================================================================================= */
 
-const Ajaxinate = function ajaxinateConstructor(config) {
-  const settings = config || {};
+var Ajaxinate = function ajaxinateConstructor(config) {
+  var settings = config || {};
   /*
     pagination: Selector of pagination container
     container: Selector of repeating content
@@ -24,13 +26,13 @@ const Ajaxinate = function ajaxinateConstructor(config) {
     loadingText: 'Loading', The text changed during loading
     callback: null, function to callback after a new page is loaded
   */
-  const defaultSettings = {
+  var defaultSettings = {
     pagination: '.AjaxinatePagination',
     method: 'scroll',
     container: '.AjaxinateLoop',
     offset: 0,
     loadingText: 'Loading',
-    callback: null,
+    callback: null
   };
   // Merge configs
   this.settings = Object.assign(defaultSettings, settings);
@@ -48,9 +50,9 @@ const Ajaxinate = function ajaxinateConstructor(config) {
 
 Ajaxinate.prototype.initialize = function initializeTheCorrectFunctionsBasedOnTheMethod() {
   if (this.containerElement) {
-    const initializers = {
+    var initializers = {
       click: this.addClickListener,
-      scroll: this.addScrollListeners,
+      scroll: this.addScrollListeners
     };
     initializers[this.settings.method]();
   }
@@ -85,8 +87,8 @@ Ajaxinate.prototype.stopMultipleClicks = function handleClickEvent(event) {
 };
 
 Ajaxinate.prototype.checkIfPaginationInView = function handleScrollEvent() {
-  const top = this.paginationElement.getBoundingClientRect().top - this.settings.offset;
-  const bottom = this.paginationElement.getBoundingClientRect().bottom + this.settings.offset;
+  var top = this.paginationElement.getBoundingClientRect().top - this.settings.offset;
+  var bottom = this.paginationElement.getBoundingClientRect().bottom + this.settings.offset;
   if (top <= window.innerHeight && bottom >= 0) {
     this.nextPageLinkElement = this.paginationElement.querySelector('a');
     document.removeEventListener('scroll', this.checkIfPaginationInView);
@@ -104,8 +106,8 @@ Ajaxinate.prototype.loadMore = function getTheHtmlOfTheNextPageWithAnAjaxRequest
   this.request = new XMLHttpRequest();
   this.request.onreadystatechange = function success() {
     if (this.request.readyState === 4 && this.request.status === 200) {
-      const newContainer = this.request.responseXML.querySelectorAll(this.settings.container)[0];
-      const newPagination = this.request.responseXML.querySelectorAll(this.settings.pagination)[0];
+      var newContainer = this.request.responseXML.querySelectorAll(this.settings.container)[0];
+      var newPagination = this.request.responseXML.querySelectorAll(this.settings.pagination)[0];
       this.containerElement.insertAdjacentHTML('beforeend', newContainer.innerHTML);
       this.paginationElement.innerHTML = newPagination.innerHTML;
       if (this.settings.callback && typeof this.settings.callback === 'function') {
