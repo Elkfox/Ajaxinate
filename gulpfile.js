@@ -27,6 +27,12 @@ const source = 'src/ajaxinate.js';
 var type = 'patch';
 var version = null;
 
+function getPackageJsonVersion () {
+  // We parse the json file instead of using require because require caches
+  // multiple calls so the version number won't be updated
+  return JSON.parse(fs.readFileSync('./package.json', 'utf8')).version;
+};
+
 // The default task, run it using `gulp`
 // Converts source to ES5 and creates a minified version and builds to dist
 gulp.task('build', function() {
@@ -86,7 +92,7 @@ gulp.task('bump-version', function () {
 gulp.task('commit-changes', function () {
   return gulp.src('.')
     .pipe(git.add())
-    .pipe(git.commit('[Prerelease] Bumped version number'));
+    .pipe(git.commit('['+type+'] version: '+ version));
 });
 
 gulp.task('push-changes', function (cb) {
@@ -94,19 +100,12 @@ gulp.task('push-changes', function (cb) {
 });
 
 gulp.task('create-new-tag', function (cb) {
-  var version = getPackageJsonVersion();
   git.tag(version, 'Created Tag for version: ' + version, function (error) {
     if (error) {
       return cb(error);
     }
     git.push('origin', 'master', {args: '--tags'}, cb);
   });
-
-  function getPackageJsonVersion () {
-    // We parse the json file instead of using require because require caches
-    // multiple calls so the version number won't be updated
-    return JSON.parse(fs.readFileSync('./package.json', 'utf8')).version;
-  };
 });
 
 gulp.task('lint', function() {
