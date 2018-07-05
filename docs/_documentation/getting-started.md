@@ -3,7 +3,7 @@ title:  "Getting Started"
 handle: "getting-started"
 category: "getting started"
 ---
-Ajaxify requires jQuery!
+Ajaxinate requires jQuery!
 
 Add ajaxify.min.js to the assets folder of your shopify theme.
 
