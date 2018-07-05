@@ -25,8 +25,14 @@
   <!-- <link rel="shortcut icon" href="{{ 'favicon.png' | asset_url }}" type="image/png" /> -->
 
   <!-- Fonts and CDN content ================================================== -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400,700" rel="stylesheet">
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="{{ site.github.url }}/assets/js/focus.js"></script>
   <script src="{{ site.github.url }}/assets/js/scroll-spy.js"></script>
+
 </head>
-<body data-spy="scroll" data-target="#navbar-example">
+<body data-spy="scroll" data-target="#navbar-example" class="parallax" data-perspective="30">
+  <div class="body-wrapper parallax" data-perspective="20">

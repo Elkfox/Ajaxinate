@@ -1,27 +1,28 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Ajaxinate - Shopify ajax pagination plugin
-#email: your-email@domain.com
+# Meta =======================================================================
+title: Ajaxinate - Shopify endless scroll pagination plugin
 description: Shopify ajax pagination plugin
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-#twitter_username: jekyllrb
-github_username:  elkfox
+# Site =======================================================================
+name: Ajaxinate
+subtitle: Endless scrolling made easy
+github_url: https://github.com/Elkfox/Ajaxinate
+download_url: https://github.com/Elkfox/Ajaxinate/archive/master.zip
+demo_url: https://ajaxify.myshopify.com/collections/all
+# Navigation =================================================================
+nav:
+  - title: Features
+    url: '#features'
+  - title: Demos
+    url: '#demos'
+  - title: Getting Started
+    url: '#getting-started'
+  - title: Settings
+    url: '#settings'
 
-# Build settings
+# Collections ================================================================
+collections:
+  documentation:
+    title: Documentation
+# Build settings =============================================================
 markdown: kramdown
 theme: minima
 gems:
@@ -29,8 +30,3 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
-collections:
-  documentation:
-    title: Documentation
-sass:
-  sass_dir: _sass

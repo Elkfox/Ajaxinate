@@ -1,12 +1,13 @@
+
 body {
-  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  font-family: $bodyFontFamily;
   line-height: $lineHeight;
   letter-spacing: 0.33px;
 }
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  font-family: $headingFontFamily;
   line-height: $lineHeight;
   display: block;
   margin-bottom: $gutter/4;
@@ -27,23 +28,23 @@ h2, .h2 {
 h3, .h3 {
   font-size: 2rem;
 }
-h4, .h4 { font-size: 1.5rem; }
-h5, .h5 { font-size: 1.2rem; }
-h6, .h6 { font-size: 1.1rem; }
+h4, .h4 { font-size: 1.45rem; }
+h5, .h5 { font-size: 1.4rem; }
+h6, .h6 { font-size: 1.3rem; }
 
-p {
-  font-size: 1rem;
+p, ul, ol, li {
+  font-size: 1.07rem;
   font-weight: $fontRegular;
   line-height: $lineHeight;
   margin-bottom: 1.4rem;
 }
 
 a {
-  color: $colorOne;
+  color: $colorText;
   cursor: pointer;
   @include transition();
   &:hover, &:focus {
-    color: darken($colorOne, 5%);
+    color: $colorEight;
   }
 }
 
@@ -77,10 +78,7 @@ i {
     li {
       list-style: inherit;
       list-style-position: inherit;
-      font-weight: $fontLight;
-      font-size: 1.15rem;
-      line-height: 2;
-      margin-bottom: $gutter/3;
+      margin-bottom: $gutter/10;
     }
   }
   ol {
@@ -90,22 +88,23 @@ i {
 aside.sidebar {
   h3 {
     font-weight: $fontBold;
-    color: $colorTwo;
+    color: $colorOne;
   }
   h4 {
     font-weight: $fontBold;
     margin-bottom: 0;
+    font-size: 1em;
   }
   li {
-    font-size: 1.15rem;
-    font-weight: $fontLight;
+    font-weight: $fontBold;
     .active {
-      font-weight: $fontBold;
+      color: $colorEight;
     }
   }
   a {
     text-decoration: none;
     transition: none;
+    color: $colorText;
     .active {
       color: $colorText;
     }
@@ -114,17 +113,27 @@ aside.sidebar {
     margin-bottom: $gutter / 2;
   }
 }
+.anchor {
+  margin-bottom: $gutter;
+}
 article.documentation {
-  h2 {
+  h2, h3 {
     font-weight: $fontBold;
-    color: $colorText;
+    color: $colorOne;
+  }
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: $gutter / 2;
   }
   h3 {
     font-size: 1.5rem;
-    margin: $gutter 0 $gutter/2 0 ;
   }
   ol, ul {
     margin: 0 0 $gutter/2 $gutter/2.5;
     list-style: initial;
   }
+  h1, h2, h3, h4, h5, h6, ul, ol, p {
+    max-width: 700px;
+  }
+
 }

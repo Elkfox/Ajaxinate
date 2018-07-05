@@ -35,18 +35,43 @@
 code.highlighter-rouge {
   font-family: Menlo, monospace;
   font-weight: 900;
-  color: $colorOne;
-  overflow: scroll;
+  color: $colorEight;
+  display: inline;
 }
 
+@mixin code-language($name) {
+  code.language-#{$name}:before {
+    content: '>_#{$name}';
+    position: absolute;
+    @include prefixer(transform,  translateY(-200%), webkit moz ms spec);
+    color: $colorEight;
+    text-transform: uppercase;
+    font-family: Menlo, monospace;
+    font-weight: 900;
+    font-size: 0.95rem;
+  }
+}
+
+@include code-language('bash');
+@include code-language('shell');
+@include code-language('liquid');
+@include code-language('javascript');
+@include code-language('plaintext');
+@include code-language('yaml');
+@include code-language('css');
+@include code-language('scss');
+@include code-language('html');
+
 .highlight {
+  pre {
+    white-space: pre-wrap;
+  }
   font-family: Menlo, monospace;
-  font-weight: 900;
-  background: $colorDarkGray;
+  font-weight: 800;
   color: $colorLightGray;
-  margin: $gutter (-$gutter);
-  padding: $gutter;
-  overflow: scroll;
+  padding-top: $gutter;
+  margin-bottom: $gutter;
+  overflow: auto;
 
   .hll,
   .s,

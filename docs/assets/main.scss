@@ -9,15 +9,16 @@
 $colorWhite: #fbfbfb;
 $colorLightGray: #f8f8f2;
 $colorGray: #44475a;
-$colorDarkGray: #282a36;
-$colorPink: #FF79C6;
-$colorPurple: #bd93f9;
-$colorCyan: #64D9EF;
+$colorDarkGray: #21212a;
+
+$colorPink: #b08cff;
+$colorPurple: #854AA0;
+$colorCyan: #68C7ED;
 $colorBlue: #6272a4;
-$colorYellow: #F1FA8C;
-$colorGreen: #50fa7b;
+$colorYellow: #E7DC64;
+$colorGreen: #5FE1C2;
 $colorOrange: #ffb86c;
-$colorRed: #ff5555;
+$colorRed: #F2608A;
 
 // Variables in use
 $colorOne: $colorRed;
@@ -29,8 +30,8 @@ $colorSix: $colorCyan;
 $colorSeven: $colorYellow;
 $colorEight: $colorPink;
 
-$colorText: $colorDarkGray;
-$colorBackground: $colorWhite;
+$colorText: $colorLightGray;
+$colorBackground: $colorDarkGray;
 $colorForeground: $colorLightGray;
 
 // Typography
@@ -39,11 +40,15 @@ $fontRegular: 400;
 $fontBold: 600;
 $lineHeight: 1.75;
 
+$bodyFontFamily: 'Oxygen', Helvetica, Arial, sans-serif;
+$headingFontFamily: 'Oxygen', Helvetica, Arial, sans-serif;
+
 // Space & Borders
 $gutter: 50px;
 $borderRadius: 2px;
-$borderWeight: 2px;
+$borderWeight: 4px;
 $borderStyle: solid;
+$borderColor: $colorYellow;
 
 // Screen Sizes
 $s: 650px;
@@ -53,6 +58,7 @@ $xl: 1450px;
 
 // Miscellaneous
 $transition: all .3s ease-out;
+$transitionDelay: 0.5s;
 
 // Icons
 $baseIconSize: 32px;
@@ -197,6 +203,18 @@ $iconLinecap: square;
   }
 }
 
+// Front matter dependent
+body {
+  background-image: url('{{ site.github.url }}/assets/bg-layer-1.png');
+  background-repeat: repeat-x;
+}
+.body-wrapper {
+  background-image: url('{{ site.github.url }}/assets/bg-layer-2.png');
+  background-repeat: repeat-x;
+  overflow: auto;
+}
+
+
 // Imports ===================================================================
 
 @import "header";
@@ -206,4 +224,5 @@ $iconLinecap: square;
 @import "form";
 @import "syntax";
 @import "icons";
+@import "popups";
 @import "additions";

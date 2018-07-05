@@ -27,7 +27,7 @@ html {
 body {
   height: 100%;
   color: $colorText;
-  background-color: $colorDarkGray;
+  background-color: $colorBackground;
   font: 16px/21px sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -83,6 +83,14 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+th {
+  font-weight: 800;
+  font-size: 1.2rem;
+  text-align: left;
+}
+td, th {
+  padding: 10px;
 }
 form, input, textarea, label, fieldset, legend, select, optgroup, option, button
 {
