@@ -23,7 +23,7 @@ const Ajaxinate = function ajaxinateConstructor(config) {
     loadingText: 'Loading', The text changed during loading
     callback: null, function to callback after a new page is loaded
   */
-  this.settings = {
+  const defaultSettings = {
     pagination: '.AjaxinatePagination',
     method: 'scroll',
     container: '.AjaxinateLoop',
@@ -32,11 +32,7 @@ const Ajaxinate = function ajaxinateConstructor(config) {
     callback: null,
   };
   // Merge configs
-  if (settings) {
-    for (var key in settings) {
-      this.settings[key] = settings[key];
-    }
-  }
+  this.settings = Object.assign(defaultSettings, settings);
 
   this.buildEndlessScrollEventListeners = this.buildEndlessScrollEventListeners.bind(this);
   this.buildEndlessClickEventListeners = this.buildEndlessClickEventListeners.bind(this);
