@@ -54,7 +54,6 @@ Ajaxinate.prototype.initialize = function initializeTheCorrectFunctionsBasedOnTh
       ajaxinate: this.buildAjaxinateEventListeners
     }
     return initializers[this.settings.method]();
-  } else {
     console.error('Ajaxinate: container element "'+this.settings.container+'" not found!');
   }
 };
