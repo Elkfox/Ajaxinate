@@ -23,5 +23,9 @@
   },
   "dependencies": {
     "gulp-env": "^0.4.0"
+  },
+  "scripts": {
+    "test": "eslint src/ajaxinate.js",
+    "build": "gulp"
   }
 }
