@@ -67,7 +67,7 @@ Ajaxinate.prototype.addClickListener = function addEventListenerForClicking() {
   if (this.paginationElement) {
     this.nextPageLinkElement = this.paginationElement.querySelector('a');
     this.clickActive = true;
-    if(typeof(this.nextPageLinkElement) !== 'undefined') {
+    if (typeof this.nextPageLinkElement !== 'undefined') {
       this.nextPageLinkElement.addEventListener('click', this.stopMultipleClicks);
     }
   }
@@ -85,12 +85,12 @@ Ajaxinate.prototype.stopMultipleClicks = function handleClickEvent(event) {
 
   if (((this.paginationElement.getBoundingClientRect().top <= window.innerHeight) - this.settings.offset && (this.paginationElement.getBoundingClientRect().bottom + this.settings.offset) >= 0)) {
     this.nextPageLinkElement = this.paginationElement.getElementsByTagName('a')[0];
-    if(this.nextPageLinkElement) {
 Ajaxinate.prototype.checkIfPaginationInView = function handleScrollEvent() {
     this.nextPageLinkElement = this.paginationElement.querySelector('a');
     document.removeEventListener('scroll', this.checkIfPaginationInView);
     window.removeEventListener('resize', this.checkIfPaginationInView);
     window.removeEventListener('orientationchange', this.checkIfPaginationInView);
+    if (this.nextPageLinkElement) {
       this.nextPageLinkElement.innerText = this.settings.loadingText;
       this.nextPageUrl = this.nextPageLinkElement.href;
       this.loadMore();
@@ -106,7 +106,7 @@ Ajaxinate.prototype.loadMore = function getTheHtmlOfTheNextPageWithAnAjaxRequest
       const newPagination = this.request.responseXML.querySelectorAll(this.settings.pagination)[0];
       this.containerElement.insertAdjacentHTML('beforeend', newContainer.innerHTML);
       this.paginationElement.innerHTML = newPagination.innerHTML;
-      if (this.settings.callback && typeof(this.settings.callback) === 'function') {
+      if (this.settings.callback && typeof this.settings.callback === 'function') {
         this.settings.callback(this.request.responseXML);
       }
       this.initialize();
