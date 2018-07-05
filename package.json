@@ -1,6 +1,12 @@
 {
   "name": "Ajaxinate",
+  "license": "SEE LICENSE IN LICENSE",
+  "description": "Ajax Pagination Javascript Plugin",
   "version": "2.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Elkfox/Ajaxinate.git"
+  },
   "devDependencies": {
     "conventional-github-releaser": "^3.1.2",
     "eslint": "^4.19.1",
