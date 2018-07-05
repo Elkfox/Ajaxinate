@@ -83,7 +83,6 @@ Ajaxinate.prototype.stopMultipleClicks = function handleClickEvent(event) {
   }
 };
 
-    this.nextPageLinkElement = this.paginationElement.getElementsByTagName('a')[0];
 Ajaxinate.prototype.checkIfPaginationInView = function handleScrollEvent() {
   const top = this.paginationElement.getBoundingClientRect().top - this.settings.offset;
   const bottom = this.paginationElement.getBoundingClientRect().bottom + this.settings.offset;
