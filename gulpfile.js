@@ -5,6 +5,7 @@ const gulp = require('gulp');
 const rename = require('gulp-rename'); // Helps rename files or changing extensions
 const babelMinify = require("gulp-babel-minify"); // Converts to ES5 before minifying
 const gutil = require('gulp-util'); // Helps with debugging
+const eslint = require('gulp-eslint');
 
 // Additional release gulp modules
 const env = require('gulp-env'); // For accessing environment variables
@@ -95,8 +96,18 @@ gulp.task('create-new-tag', function (cb) {
   };
 });
 
+gulp.task('lint', function() {
+  return gulp.src(source)
+    .pipe(eslint({
+      envs: ['node', 'browser']
+    }))
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
+});
+
 gulp.task('release', function (callback) {
   runSequence(
+    'lint',
     'bump-version',
     'changelog',
     'commit-changes',
