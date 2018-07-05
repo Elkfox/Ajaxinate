@@ -51,8 +51,8 @@ Ajaxinate.prototype.initialize = function initializeTheCorrectFunctionsBasedOnTh
     const initializers = {
       click: this.buildEndlessClickEventListeners,
       scroll: this.buildEndlessScrollEventListeners,
-      ajaxinate: this.buildAjaxinateEventListeners
-    }
+      ajaxinate: this.buildAjaxinateEventListeners,
+    };
     return initializers[this.settings.method]();
     console.error('Ajaxinate: container element "'+this.settings.container+'" not found!');
   }
