@@ -47,8 +47,8 @@ const Ajaxinate = function ajaxinateConstructor(config) {
 
 Ajaxinate.prototype.initialize = function initializeTheCorrectFunctionsBasedOnTheMethod() {
 
-    var initializers = {
   if (this.containerElement) {
+    const initializers = {
       click: this.buildEndlessClickEventListeners,
       scroll: this.buildEndlessScrollEventListeners,
       ajaxinate: this.buildAjaxinateEventListeners
@@ -109,9 +109,9 @@ Ajaxinate.prototype.checkIfPaginationInView = function() {
 Ajaxinate.prototype.loadMore = function getTheHtmlOfTheNextPageWithAnAjaxRequest() {
   this.request = new XMLHttpRequest();
   this.request.onreadystatechange = function() {
-      var newContainer = this.request.responseXML.querySelectorAll(this.settings.container)[0];
-      var newPagination = this.request.responseXML.querySelectorAll(this.settings.pagination)[0];
     if (this.request.readyState === 4 && this.request.status === 200) {
+      const newContainer = this.request.responseXML.querySelectorAll(this.settings.container)[0];
+      const newPagination = this.request.responseXML.querySelectorAll(this.settings.pagination)[0];
       this.containerElement.insertAdjacentHTML('beforeend', newContainer.innerHTML);
       this.paginationElement.innerHTML = newPagination.innerHTML;
       if (this.settings.callback && typeof(this.settings.callback) === 'function') {
