@@ -39,8 +39,8 @@ const Ajaxinate = function ajaxinateConstructor(config) {
   this.checkIfPaginationInView = this.checkIfPaginationInView.bind(this);
   this.stopMultipleClicks = this.stopMultipleClicks.bind(this);
 
-  this.containerElement = document.querySelectorAll(this.settings.container)[0];
-  this.paginationElement = document.querySelectorAll(this.settings.pagination)[0];
+  this.containerElement = document.querySelector(this.settings.container);
+  this.paginationElement = document.querySelector(this.settings.pagination);
 
   this.settings.method ? this.initialize() : console.error('Ajaxinate: No method provided, expected: click, scroll, or, ajaxinate');
 };
