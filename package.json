@@ -21,17 +21,11 @@
     "gulp-util": "^3.0.8",
     "run-sequence": "^2.2.1"
   },
-  "eslintConfig": {
-    "env": {
-      "browser": true,
-      "node": true
-    }
-  },
   "dependencies": {
     "gulp-env": "^0.4.0"
   },
   "scripts": {
-    "test": "eslint src/ajaxinate.js",
+    "test": "eslint --env browser,node src/ajaxinate.js",
     "build": "gulp"
   }
 }
