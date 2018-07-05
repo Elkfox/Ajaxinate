@@ -31,6 +31,7 @@ const Ajaxinate = function ajaxinateConstructor(config) {
     loadingText: 'Loading',
     callback: null
   }
+  };
   // Merge configs
   if (settings) {
     for (var key in settings) {
