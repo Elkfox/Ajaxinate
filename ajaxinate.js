@@ -6,7 +6,7 @@
 \___/|__/| \_/|__/\__/  /\_/
               |\
               |/
-Ajaxinate v2.0
+Ajaxinate v2.0.1
 https://github.com/Elkfox/Ajaxinate
 Copyright (c) 2017 Elkfox Co Pty Ltd
 https://elkfox.com
@@ -77,7 +77,9 @@ Ajaxinate.prototype.buildEndlessClickEventListeners = function() {
   if(this.paginationElement) {
     this.nextPageLinkElement = this.paginationElement.getElementsByTagName('a')[0];
     this.clickActive = true;
-    this.nextPageLinkElement.addEventListener('click', this.stopMultipleClicks);
+    if(typeof(this.nextPageLinkElement) !== 'undefined') {
+      this.nextPageLinkElement.addEventListener('click', this.stopMultipleClicks);
+    }
   } else {
     console.error('Ajaxinate: pagination element "'+this.settings.pagination+'" not found!');
   }
@@ -98,11 +100,11 @@ Ajaxinate.prototype.stopMultipleClicks = function(event) {
 Ajaxinate.prototype.checkIfPaginationInView = function() {
   if (((this.paginationElement.getBoundingClientRect().top <= window.innerHeight) - this.settings.offset && (this.paginationElement.getBoundingClientRect().bottom + this.settings.offset) >= 0)) {
     this.nextPageLinkElement = this.paginationElement.getElementsByTagName('a')[0];
-    this.nextPageLinkElement.innerText = this.settings.loadingText;
     document.removeEventListener("scroll", this.checkIfPaginationInView);
     window.removeEventListener("resize", this.checkIfPaginationInView);
     window.removeEventListener("orientationchange", this.checkIfPaginationInView);
     if(this.nextPageLinkElement) {
+      this.nextPageLinkElement.innerText = this.settings.loadingText;
       this.nextPageUrl = this.nextPageLinkElement.href;
       this.loadMore();
     }
