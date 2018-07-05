@@ -17,10 +17,11 @@ const fs = require('fs'); // For working with the local file system
 
 // Define the location of our build directory
 const destination = 'dist/';
+const source = 'src/ajaxinate.js';
 
 // The default task, run it using `gulp`
 gulp.task('default', function() {
-  return gulp.src('src/focus.js')
+  return gulp.src(source)
     // First will output the non-minified version
     .pipe(gulp.dest(destination))
     // This will convert to ecma5 then minify
