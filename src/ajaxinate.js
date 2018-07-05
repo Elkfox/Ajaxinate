@@ -14,8 +14,8 @@ Project lead: George Butter
 MIT License
 ============================================================================== */
 
-var Ajaxinate = function(settings) {
-  settings = settings || {};
+const Ajaxinate = function ajaxinateConstructor(config) {
+  const settings = config || {};
   /*
     pagination: Selector of pagination container
     container: Selector of repeating content
