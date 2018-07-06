@@ -91,9 +91,7 @@ Ajaxinate.prototype.checkIfPaginationInView = function handleScrollEvent() {
   var bottom = this.paginationElement.getBoundingClientRect().bottom + this.settings.offset;
   if (top <= window.innerHeight && bottom >= 0) {
     this.nextPageLinkElement = this.paginationElement.querySelector('a');
-    document.removeEventListener('scroll', this.checkIfPaginationInView);
-    window.removeEventListener('resize', this.checkIfPaginationInView);
-    window.removeEventListener('orientationchange', this.checkIfPaginationInView);
+    this.removeScrollListener();
     if (this.nextPageLinkElement) {
       this.nextPageLinkElement.innerText = this.settings.loadingText;
       this.nextPageUrl = this.nextPageLinkElement.href;
@@ -119,4 +117,23 @@ Ajaxinate.prototype.loadMore = function getTheHtmlOfTheNextPageWithAnAjaxRequest
   this.request.open('GET', this.nextPageUrl);
   this.request.responseType = 'document';
   this.request.send();
+};
+
+Ajaxinate.prototype.removeClickListener = function removeClickEventListener() {
+  this.nextPageLinkElement.addEventListener('click', this.stopMultipleClicks);
+};
+
+Ajaxinate.prototype.removeScrollListener = function removeScrollEventListener() {
+  document.removeEventListener('scroll', this.checkIfPaginationInView);
+  window.removeEventListener('resize', this.checkIfPaginationInView);
+  window.removeEventListener('orientationchange', this.checkIfPaginationInView);
+};
+
+Ajaxinate.prototype.destroy = function removeEventListenersAndRemoveThis() {
+  var destroyers = {
+    click: this.removeClickListener,
+    scroll: this.removeScrollListener
+  };
+  destroyers[this.settings.method]();
+  return this;
 };

@@ -89,9 +89,7 @@ Ajaxinate.prototype.checkIfPaginationInView = function handleScrollEvent() {
   const bottom = this.paginationElement.getBoundingClientRect().bottom + this.settings.offset;
   if (top <= window.innerHeight && bottom >= 0) {
     this.nextPageLinkElement = this.paginationElement.querySelector('a');
-    document.removeEventListener('scroll', this.checkIfPaginationInView);
-    window.removeEventListener('resize', this.checkIfPaginationInView);
-    window.removeEventListener('orientationchange', this.checkIfPaginationInView);
+    this.removeScrollListener();
     if (this.nextPageLinkElement) {
       this.nextPageLinkElement.innerText = this.settings.loadingText;
       this.nextPageUrl = this.nextPageLinkElement.href;
@@ -119,18 +117,21 @@ Ajaxinate.prototype.loadMore = function getTheHtmlOfTheNextPageWithAnAjaxRequest
   this.request.send();
 };
 
+Ajaxinate.prototype.removeClickListener = function removeClickEventListener() {
+  this.nextPageLinkElement.addEventListener('click', this.stopMultipleClicks);
+};
+
+Ajaxinate.prototype.removeScrollListener = function removeScrollEventListener() {
+  document.removeEventListener('scroll', this.checkIfPaginationInView);
+  window.removeEventListener('resize', this.checkIfPaginationInView);
+  window.removeEventListener('orientationchange', this.checkIfPaginationInView);
+};
+
 Ajaxinate.prototype.destroy = function removeEventListenersAndRemoveThis() {
   const destroyers = {
-    click: function removeClickListener() {
-      this.nextPageLinkElement.addEventListener('click', this.stopMultipleClicks);
-    },
-    scroll: function removeScrollListeners() {
-      document.removeEventListener('scroll', this.checkIfPaginationInView);
-      window.removeEventListener('resize', this.checkIfPaginationInView);
-      window.removeEventListener('orientationchange', this.checkIfPaginationInView);
-    },
+    click: this.removeClickListener,
+    scroll: this.removeScrollListener,
   };
   destroyers[this.settings.method]();
-
-  this =
-}
+  return this;
+};
