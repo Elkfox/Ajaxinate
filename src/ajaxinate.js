@@ -118,3 +118,19 @@ Ajaxinate.prototype.loadMore = function getTheHtmlOfTheNextPageWithAnAjaxRequest
   this.request.responseType = 'document';
   this.request.send();
 };
+
+Ajaxinate.prototype.destroy = function removeEventListenersAndRemoveThis() {
+  const destroyers = {
+    click: function removeClickListener() {
+      this.nextPageLinkElement.addEventListener('click', this.stopMultipleClicks);
+    },
+    scroll: function removeScrollListeners() {
+      document.removeEventListener('scroll', this.checkIfPaginationInView);
+      window.removeEventListener('resize', this.checkIfPaginationInView);
+      window.removeEventListener('orientationchange', this.checkIfPaginationInView);
+    },
+  };
+  destroyers[this.settings.method]();
+
+  this =
+}
