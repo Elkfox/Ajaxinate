@@ -32,6 +32,6 @@
   "scripts": {
     "test": "eslint --env browser,node src/ajaxinate.js",
     "build": "gulp build",
-    "release": "gulp release",
+    "release": "gulp release"
   }
 }
