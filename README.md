@@ -7,6 +7,9 @@ Ajax pagination plugin for Shopify themes.
 
 
 ### Development
+
+Run npm install to add all of the dependencies
+
 Ajaxinate is compiled using gulp. The src file is located in `src/ajaxinate.js` and built into `/dist`. Gulp is setup to lint the source with the airbnb style guide. Transpile the code using babel from ES6 to ES5 for best browser support. Create git semantic versioning (semver) releases, with automatic changelog creation.
 
 Ajaxinate uses Atom conventional commit messages to automatically create a changelog so it is important that your commit messages comply to this standard:
