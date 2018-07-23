@@ -7,11 +7,11 @@
               |\
               |/
 Ajaxinate
-version v2.0.4
+version v2.0.5
 https://github.com/Elkfox/Ajaxinate
 Copyright (c) 2017 Elkfox Co Pty Ltd
 https://elkfox.com
-Project lead: George Butter
+Project lead: George Butler
 MIT License
 ================================================================================================= */
 
@@ -19,6 +19,7 @@ const Ajaxinate = function ajaxinateConstructor(config) {
   const settings = config || {};
   /*
     pagination: Selector of pagination container
+    method: [options are 'scroll', 'click']
     container: Selector of repeating content
     offset: 0, offset the number of pixels before the bottom to start loading more on scroll
     loadingText: 'Loading', The text changed during loading
@@ -35,11 +36,14 @@ const Ajaxinate = function ajaxinateConstructor(config) {
   // Merge configs
   this.settings = Object.assign(defaultSettings, settings);
 
+  // Bind 'this' to applicable prototype functions
   this.addScrollListeners = this.addScrollListeners.bind(this);
   this.addClickListener = this.addClickListener.bind(this);
   this.checkIfPaginationInView = this.checkIfPaginationInView.bind(this);
   this.stopMultipleClicks = this.stopMultipleClicks.bind(this);
+  this.destroy = this.destroy.bind(this);
 
+  // Set up our element selectors
   this.containerElement = document.querySelector(this.settings.container);
   this.paginationElement = document.querySelector(this.settings.pagination);
 
@@ -47,6 +51,7 @@ const Ajaxinate = function ajaxinateConstructor(config) {
 };
 
 Ajaxinate.prototype.initialize = function initializeTheCorrectFunctionsBasedOnTheMethod() {
+  // Find and init the correct function based on the method set in the config
   if (this.containerElement) {
     const initializers = {
       click: this.addClickListener,
@@ -127,7 +132,9 @@ Ajaxinate.prototype.removeScrollListener = function removeScrollEventListener() 
   window.removeEventListener('orientationchange', this.checkIfPaginationInView);
 };
 
-Ajaxinate.prototype.destroy = function removeEventListenersAndRemoveThis() {
+Ajaxinate.prototype.destroy = function removeEventListenersAndReturnThis() {
+  // This method is used to unbind event listeners from the DOM
+  // This function is called manually to destroy "this" Ajaxinate instance
   const destroyers = {
     click: this.removeClickListener,
     scroll: this.removeScrollListener,
