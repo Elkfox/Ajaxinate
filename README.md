@@ -9,6 +9,7 @@ Ajax pagination plugin for Shopify themes.
 ### Development
 
 $ `git clone git@github.com:Elkfox/Ajaxinate.git`
+
 $ `npm install`
 
 Ajaxinate is compiled using gulp. The src file is located in `src/ajaxinate.js` and built into `/dist`. Gulp is setup to lint the source with the airbnb style guide. Transpile the code using babel from ES6 to ES5 for best browser support. Create git semantic versioning (semver) releases, with automatic changelog creation.
@@ -27,7 +28,7 @@ Compile the code to es5 and build a minified and an unminified version to the di
 `npm run release [type]`
 To use the release command correctly you first need to setup your env correctly. See Setting up your env for more info.
 
-Running `npm release` without any arguments will default to releasing it as a patch which should only be used for releasing backward compatible bug fixes.
+Running `npm run release` without any arguments will default to releasing it as a patch which should only be used for releasing backward compatible bug fixes.
 
 
 `[type]`

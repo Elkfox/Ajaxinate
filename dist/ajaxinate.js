@@ -9,11 +9,10 @@
               |\
               |/
 Ajaxinate
-version v2.0.5
+version v2.0.6
 https://github.com/Elkfox/Ajaxinate
 Copyright (c) 2017 Elkfox Co Pty Ltd
 https://elkfox.com
-Project lead: George Butler
 MIT License
 ================================================================================================= */
 
@@ -53,7 +52,7 @@ var Ajaxinate = function ajaxinateConstructor(config) {
 };
 
 Ajaxinate.prototype.initialize = function initializeTheCorrectFunctionsBasedOnTheMethod() {
-  // Find and init the correct function based on the method set in the config
+  // Find and initialise the correct function based on the method set in the config
   if (this.containerElement) {
     var initializers = {
       click: this.addClickListener,
@@ -84,7 +83,7 @@ Ajaxinate.prototype.addClickListener = function addEventListenerForClicking() {
 Ajaxinate.prototype.stopMultipleClicks = function handleClickEvent(event) {
   event.preventDefault();
   if (this.clickActive) {
-    this.nextPageLinkElement.innerText = this.settings.loadingText;
+    this.nextPageLinkElement.innerHTML = this.settings.loadingText;
     this.nextPageUrl = this.nextPageLinkElement.href;
     this.clickActive = false;
     this.loadMore();
@@ -98,7 +97,7 @@ Ajaxinate.prototype.checkIfPaginationInView = function handleScrollEvent() {
     this.nextPageLinkElement = this.paginationElement.querySelector('a');
     this.removeScrollListener();
     if (this.nextPageLinkElement) {
-      this.nextPageLinkElement.innerText = this.settings.loadingText;
+      this.nextPageLinkElement.innerHTML = this.settings.loadingText;
       this.nextPageUrl = this.nextPageLinkElement.href;
       this.loadMore();
     }

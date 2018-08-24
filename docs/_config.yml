@@ -17,6 +17,8 @@ nav:
     url: '#getting-started'
   - title: Settings
     url: '#settings'
+  - title: Methods
+    url: '#methods'
 
 # Collections ================================================================
 collections:

@@ -1,3 +1,22 @@
+## [2.0.6](https://github.com/Elkfox/Ajaxinate/compare/2.0.5...2.0.6) (2018-08-11)
+
+
+### :memo:
+
+* Add more development notes ([814f9a0](https://github.com/Elkfox/Ajaxinate/commit/814f9a0))
+* Add more development notes ([b1bd46e](https://github.com/Elkfox/Ajaxinate/commit/b1bd46e))
+* Methods documentation and fix typos ([9a5baf4](https://github.com/Elkfox/Ajaxinate/commit/9a5baf4))
+
+### :package:
+
+* Package lock ([0138778](https://github.com/Elkfox/Ajaxinate/commit/0138778))
+
+### :sparkles:
+
+* Use innerHTML for the loading button ([5844524](https://github.com/Elkfox/Ajaxinate/commit/5844524))
+
+
+
 ## [2.0.5](https://github.com/Elkfox/Ajaxinate/compare/2.0.4...2.0.5) (2018-07-23)
 
 
