@@ -1,11 +1,12 @@
 {
-  "name": "Ajaxinate",
-  "license": "SEE LICENSE IN LICENSE",
+  "name": "ajaxinate",
+  "license": "MIT",
   "description": "Ajax Pagination Javascript Plugin",
   "version": "2.0.5",
+  "author": "Elkfox <opensource@elkfox.com> (https://elkfox.github.io)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Elkfox/Ajaxinate.git"
+    "url": "git+https://github.com/Elkfox/Ajaxinate.git"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -33,5 +34,16 @@
     "test": "eslint --env browser,node src/ajaxinate.js",
     "build": "gulp build",
     "release": "gulp release"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/Elkfox/Ajaxinate/issues"
+  },
+  "homepage": "https://github.com/Elkfox/Ajaxinate#readme",
+  "main": "ajaxinate.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "keywords": [
+    "shopify", "shopify-theme", "ajaxify", "pagination", "ajax", "ajax-pagination-plugin"
+  ]
 }
