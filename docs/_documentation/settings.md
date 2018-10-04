@@ -9,8 +9,8 @@ For example:
 {% highlight javascript %}
 document.addEventListener("DOMContentLoaded", function() {
   var endlessScroll = new Ajaxinate({
-    container: '#EndlessScroll',
-    pagination: '#EndlessPagination'
+    container: '#AjaxinateLoop',
+    pagination: '#AjaxinatePagination'
   });
 });
 {% endhighlight %}
