@@ -26,7 +26,7 @@ Setup your collection or blog template, for example:
       {% endfor %}
     </div>
 
-    <div class="AjaxinatePagination">
+    <div id="AjaxinatePagination">
       {% if paginate.next %}
         <a href="{{ paginate.next.url }}">Loading More</a>
       {% endif %}
