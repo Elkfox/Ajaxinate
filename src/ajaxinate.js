@@ -7,7 +7,7 @@
               |\
               |/
 Ajaxinate
-version v2.0.6
+version v2.0.7
 https://github.com/Elkfox/Ajaxinate
 Copyright (c) 2017 Elkfox Co Pty Ltd
 https://elkfox.com
@@ -73,8 +73,7 @@ Ajaxinate.prototype.addClickListener = function addEventListenerForClicking() {
   if (this.paginationElement) {
     this.nextPageLinkElement = this.paginationElement.querySelector('a');
     this.clickActive = true;
-    // Safari uses null instead of undefined, so we check for both
-    if (typeof this.nextPageLinkElement !== 'undefined' || typeof this.nextPageLinkElement !== 'null') {
+    if (this.nextPageLinkElement !== null) {
       this.nextPageLinkElement.addEventListener('click', this.stopMultipleClicks);
     }
   }

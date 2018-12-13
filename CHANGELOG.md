@@ -1,3 +1,26 @@
+## [2.0.7](https://github.com/Elkfox/Ajaxinate/compare/2.0.5...2.0.7) (2018-12-13)
+
+
+### :memo:
+
+* Add more development notes ([814f9a0](https://github.com/Elkfox/Ajaxinate/commit/814f9a0))
+* Add more development notes ([b1bd46e](https://github.com/Elkfox/Ajaxinate/commit/b1bd46e))
+* Methods documentation and fix typos ([9a5baf4](https://github.com/Elkfox/Ajaxinate/commit/9a5baf4))
+
+### :package:
+
+* Package lock ([0138778](https://github.com/Elkfox/Ajaxinate/commit/0138778))
+
+### :sparkles:
+
+* Use innerHTML for the loading button ([5844524](https://github.com/Elkfox/Ajaxinate/commit/5844524))
+
+### :tropical_drink:
+
+* Add git moji to gulp version commit messages ([1fa1f66](https://github.com/Elkfox/Ajaxinate/commit/1fa1f66))
+
+
+
 ## [2.0.6](https://github.com/Elkfox/Ajaxinate/compare/2.0.5...2.0.6) (2018-08-11)
 
 
