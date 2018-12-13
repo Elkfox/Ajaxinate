@@ -9,7 +9,7 @@
               |\
               |/
 Ajaxinate
-version v2.0.9
+version v2.0.10
 https://github.com/Elkfox/Ajaxinate
 Copyright (c) 2017 Elkfox Co Pty Ltd
 https://elkfox.com
