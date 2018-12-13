@@ -19,8 +19,7 @@ Setup your collection or blog template, for example:
 {% highlight liquid %}
 {% raw %}
 {% paginate collection.products by 3 %}
-  <div id="MainContent" class="container">
-    <div class="row AjaxinateLoop">
+    <div id="AjaxinateLoop" >
       {% for product in collection.products %}
         {% include 'product-grid-item' %}
       {% endfor %}
@@ -31,7 +30,6 @@ Setup your collection or blog template, for example:
         <a href="{{ paginate.next.url }}">Loading More</a>
       {% endif %}
     </div>
-  </div>
 {% endpaginate %}
 {% endraw %}
 {% endhighlight %}
