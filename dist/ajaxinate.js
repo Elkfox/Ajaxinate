@@ -9,11 +9,10 @@
               |\
               |/
 Ajaxinate
-version v2.0.10
+version v2.0.11
 https://github.com/Elkfox/Ajaxinate
 Copyright (c) 2017 Elkfox Co Pty Ltd
 https://elkfox.com
-Project lead: George Butler
 MIT License
 ================================================================================================= */
 
