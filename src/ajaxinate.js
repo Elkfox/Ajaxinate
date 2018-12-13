@@ -73,7 +73,8 @@ Ajaxinate.prototype.addClickListener = function addEventListenerForClicking() {
   if (this.paginationElement) {
     this.nextPageLinkElement = this.paginationElement.querySelector('a');
     this.clickActive = true;
-    if (typeof this.nextPageLinkElement !== 'undefined') {
+    // Safari uses null instead of undefined, so we check for both
+    if (typeof this.nextPageLinkElement !== 'undefined' || typeof this.nextPageLinkElement !== 'null') {
       this.nextPageLinkElement.addEventListener('click', this.stopMultipleClicks);
     }
   }
