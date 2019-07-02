@@ -39,7 +39,7 @@
     "url": "https://github.com/Elkfox/Ajaxinate/issues"
   },
   "homepage": "https://github.com/Elkfox/Ajaxinate#readme",
-  "main": "ajaxinate.js",
+  "main": "src/ajaxinate.js",
   "directories": {
     "doc": "docs"
   },

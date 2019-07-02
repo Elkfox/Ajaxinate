@@ -14,7 +14,7 @@ https://elkfox.com
 MIT License
 ================================================================================================= */
 
-const Ajaxinate = function ajaxinateConstructor(config) {
+export const Ajaxinate = function ajaxinateConstructor(config) {
   const settings = config || {};
   /*
     pagination: Selector of pagination container
