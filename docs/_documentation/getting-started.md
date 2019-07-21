@@ -19,13 +19,13 @@ Setup your collection or blog template, for example:
 {% highlight liquid %}
 {% raw %}
 {% paginate collection.products by 3 %}
-    <div id="AjaxinateLoop" >
+    <div class="AjaxinateLoop" >
       {% for product in collection.products %}
         {% include 'product-grid-item' %}
       {% endfor %}
     </div>
 
-    <div id="AjaxinatePagination">
+    <div class="AjaxinatePagination">
       {% if paginate.next %}
         <a href="{{ paginate.next.url }}">Loading More</a>
       {% endif %}
