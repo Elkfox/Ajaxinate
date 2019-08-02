@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 Option      | Default                | Type     | Description
 ------------|------------------------|----------|-------------
-pagination  | `.AjaxinatePagination` | String   | A selector to identify the pagination container.
-container   | `.AjaxinateLoop`       | String   | A selector to identify the grid that you want to duplicate.
+pagination  | `#AjaxinatePagination` | String   | A selector to identify the pagination container.
+container   | `#AjaxinateLoop`       | String   | A selector to identify the grid that you want to duplicate.
 method      | `scroll`               | String   | Can be changed to click to that users must click to load more.
 offset      | `0`                    | Integer  | Decrease the distance required to scroll before sending a request.
 loadingText | `Loading`              | String   | Change the text of the pagination link during a request.
