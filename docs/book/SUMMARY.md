@@ -9,7 +9,3 @@
 
 * [Github](https://github.com/Elkfox/Ajaxinate)
 
-## Related projects
-
-* [Concrete Theme Framework](https://concrete.elkfox.io)
-
