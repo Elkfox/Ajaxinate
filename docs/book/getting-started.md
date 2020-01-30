@@ -7,11 +7,13 @@ $ npm i ajaxinate
 ```
 
 ```javascript
-import Ajaxinate from 'ajaxinate';
+import {Ajaxinate} from 'ajaxinate';
 
-const endlessScroll = new Ajaxinate();
-
-endlessScroll();
+new Ajaxinate({
+  container: '#AjaxinateContainer',
+  pagination: '#AjaxinatePagination',
+  loadingText: 'Loading more...',
+});
 ```
 
 ### Manual installation
@@ -54,4 +56,3 @@ endlessScroll();
    ```
 
 5. Configure your settings as desired.
-
