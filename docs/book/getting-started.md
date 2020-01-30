@@ -7,7 +7,7 @@ $ npm i ajaxinate
 ```
 
 ```javascript
-import 'ajaxinate';
+import Ajaxinate from 'ajaxinate';
 
 const endlessScroll = new Ajaxinate();
 
