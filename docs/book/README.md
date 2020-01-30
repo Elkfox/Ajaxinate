@@ -10,7 +10,7 @@
 ### Demos
 
 * \*\*\*\*[**Endless scroll demo**](https://ajaxify.myshopify.com/collections/all) ↗
-* \*\*\*\*[**Endless click demo**](https://ajaxify.myshopify.com/collections/all?view=endless-click) ↗
+* \*\*\*\*[**Endless click demo**](https://ajaxinate.myshopify.com/collections/all?view=endless-click) ↗
 
 ### Getting started
 
