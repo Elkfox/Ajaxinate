@@ -3,7 +3,7 @@
   "license": "MIT",
   "description": "Ajax Pagination Javascript Plugin",
   "version": "2.0.11",
-  "author": "Elkfox <opensource@elkfox.com> (https://elkfox.github.io)",
+  "author": "Elkfox <opensource@elkfox.com> (https://elkfox.io)",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Elkfox/Ajaxinate.git"
@@ -38,7 +38,7 @@
   "bugs": {
     "url": "https://github.com/Elkfox/Ajaxinate/issues"
   },
-  "homepage": "https://elkfox.github.io/Ajaxinate/",
+  "homepage": "https://ajaxinate.elkfox.io/",
   "main": "ajaxinate.js",
   "directories": {
     "doc": "docs"

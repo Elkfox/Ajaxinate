@@ -2,9 +2,9 @@
 
 # Ajaxinate
 
-Ajax pagination plugin for Shopify themes.
+Ajax pagination plugin for Shopify themes
 
-<a href="https://elkfox.github.io/Ajaxinate/" target="_blank">View the demo and documentation to get started</a>
+<a href="https://ajaxinate.elkfox.io/" target="_blank">View the documentation and demo site to get started</a>
 
 ### License
 
