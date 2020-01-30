@@ -1,34 +1,14 @@
+theme: jekyll-theme-cayman
+exclude:
+  - book/
+
 # Meta =======================================================================
 title: Ajaxinate - Shopify endless scroll pagination plugin
 description: Shopify ajax pagination plugin
+
 # Site =======================================================================
 name: Ajaxinate
 subtitle: Endless scrolling made easy
 github_url: https://github.com/Elkfox/Ajaxinate
 download_url: https://github.com/Elkfox/Ajaxinate/archive/master.zip
 demo_url: https://ajaxify.myshopify.com/collections/all
-# Navigation =================================================================
-nav:
-  - title: Features
-    url: '#features'
-  - title: Demos
-    url: '#demos'
-  - title: Getting Started
-    url: '#getting-started'
-  - title: Settings
-    url: '#settings'
-  - title: Methods
-    url: '#methods'
-
-# Collections ================================================================
-collections:
-  documentation:
-    title: Documentation
-# Build settings =============================================================
-markdown: kramdown
-theme: minima
-gems:
-  - jekyll-feed
-exclude:
-  - Gemfile
-  - Gemfile.lock
