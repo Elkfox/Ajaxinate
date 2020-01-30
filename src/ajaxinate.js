@@ -25,9 +25,9 @@ export const Ajaxinate = function ajaxinateConstructor(config) {
     callback: null, function to callback after a new page is loaded
   */
   const defaultSettings = {
-    pagination: '.AjaxinatePagination',
+    pagination: '#AjaxinatePagination',
     method: 'scroll',
-    container: '.AjaxinateLoop',
+    container: '#AjaxinateLoop',
     offset: 0,
     loadingText: 'Loading',
     callback: null,

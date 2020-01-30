@@ -27,9 +27,9 @@ var Ajaxinate = function ajaxinateConstructor(config) {
     callback: null, function to callback after a new page is loaded
   */
   var defaultSettings = {
-    pagination: '.AjaxinatePagination',
+    pagination: '#AjaxinatePagination',
     method: 'scroll',
-    container: '.AjaxinateLoop',
+    container: '#AjaxinateLoop',
     offset: 0,
     loadingText: 'Loading',
     callback: null
