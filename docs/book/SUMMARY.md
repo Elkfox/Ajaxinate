@@ -11,6 +11,5 @@
 
 ## Related projects
 
-* [Untitled](related-projects/untitled.md)
 * [Concrete Theme Framework](https://concrete.elkfox.io)
 
