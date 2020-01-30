@@ -2,7 +2,7 @@
   "name": "ajaxinate",
   "license": "MIT",
   "description": "Ajax Pagination Javascript Plugin",
-  "version": "2.0.11",
+  "version": "3.0.0",
   "author": "Elkfox <opensource@elkfox.com> (https://elkfox.io)",
   "repository": {
     "type": "git",
