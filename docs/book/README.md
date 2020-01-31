@@ -36,7 +36,7 @@ For example:
 ```javascript
 document.addEventListener("DOMContentLoaded", function() {
   var endlessScroll = new Ajaxinate({
-    container: '#AjaxinateLoop',
+    container: '#AjaxinateContainer',
     pagination: '#AjaxinatePagination',
     method: 'click',
     offset: 1000
@@ -47,4 +47,3 @@ document.addEventListener("DOMContentLoaded", function() {
 ### Methods
 
 {% page-ref page="methods.md" %}
-

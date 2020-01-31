@@ -32,7 +32,7 @@ new Ajaxinate({
    {% code title="collection.liquid" %}
    ```python
    {% paginate collection.products by 3 %}
-       <div id="AjaxinateLoop" >
+       <div id="AjaxinateContainer" >
          {% for product in collection.products %}
            {% include 'product-grid-item' %}
          {% endfor %}
