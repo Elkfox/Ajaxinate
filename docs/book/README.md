@@ -24,8 +24,8 @@ If you would like to change the names of the selectors, you can pass them in wit
 
 | Option | Default | Type | Description |
 | :--- | :--- | :--- | :--- |
-| pagination | **\#AjaxinatePagination** | String | Selector to identify the pagination container |
 | container | **\#AjaxinateContainer** | String | Selector to identify the element that you want to repeat |
+| pagination | **\#AjaxinatePagination** | String | Selector to identify the pagination container |
 | method | **scroll** | String | Changes the method to 'endless click when set to' \`click\`  |
 | offset | **0** | Integer | The distance required to scroll before sending a request |
 | loadingText | **Loading** | String | The text of the pagination link during a request |
