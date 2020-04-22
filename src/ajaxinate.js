@@ -11,7 +11,9 @@
  * pagination: selector of pagination container
  * offset: number of pixels before the bottom to start loading more on scroll
  * loadingText: 'Loading', The text shown during when appending new content
- * callback: null, callback function after new content is appended
+ * useDefault: true, if Ajaxinate should control DOM or is only used for loading events
+ * loadingStart: null, function to run when loading a new page has started
+ * loadingEnd: null, function to run when loading a new page has finished
  *
  * Usage;
  *
@@ -33,7 +35,9 @@ export function Ajaxinate(config) {
     pagination: '#AjaxinatePagination',
     offset: 0,
     loadingText: 'Loading',
-    callback: null,
+    useDefault: true,
+    loadingStart: null,
+    loadingEnd: null,
   };
 
   // Merge custom configs with defaults
@@ -90,7 +94,11 @@ Ajaxinate.prototype.preventMultipleClicks = function preventMultipleClicks(event
 
   if (!this.clickActive) { return; }
 
-  this.nextPageLinkElement.innerText = this.settings.loadingText;
+  // If app uses default effect change link element inner text
+  if (this.settings.useDefault) {
+    this.nextPageLinkElement.innerText = this.settings.loadingText;
+  }
+
   this.nextPageUrl = this.nextPageLinkElement.href;
   this.clickActive = false;
 
@@ -106,7 +114,12 @@ Ajaxinate.prototype.checkIfPaginationInView = function checkIfPaginationInView()
     this.removeScrollListener();
 
     if (this.nextPageLinkElement) {
-      this.nextPageLinkElement.innerText = this.settings.loadingText;
+
+      // If app uses default effect change link element inner text
+      if (this.settings.useDefault) {
+        this.nextPageLinkElement.innerText = this.settings.loadingText;
+      }
+
       this.nextPageUrl = this.nextPageLinkElement.href;
 
       this.loadMore();
@@ -115,6 +128,9 @@ Ajaxinate.prototype.checkIfPaginationInView = function checkIfPaginationInView()
 };
 
 Ajaxinate.prototype.loadMore = function loadMore() {
+  if (this.settings.loadingStart && typeof this.settings.loadingStart === 'function') {
+    this.settings.loadingStart();
+  }
   this.request = new XMLHttpRequest();
 
   this.request.onreadystatechange = function success() {
@@ -131,8 +147,8 @@ Ajaxinate.prototype.loadMore = function loadMore() {
     } else {
       this.paginationElement.innerHTML = newPagination.innerHTML;
 
-      if (this.settings.callback && typeof this.settings.callback === 'function') {
-        this.settings.callback(this.request.responseXML);
+      if (this.settings.loadingEnd && typeof this.settings.loadingEnd === 'function') {
+        this.settings.loadingEnd(this.request.responseXML);
       }
 
       this.initialize();
