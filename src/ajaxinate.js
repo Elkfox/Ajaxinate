@@ -80,7 +80,7 @@ Ajaxinate.prototype.addClickListener = function addClickListener() {
   this.nextPageLinkElement = this.paginationElement.querySelector('a');
   this.clickActive = true;
 
-  if (typeof this.nextPageLinkElement !== 'undefined') {
+  if (typeof this.nextPageLinkElement !== 'undefined' && this.nextPageLinkElement !== null) {
     this.nextPageLinkElement.addEventListener('click', this.preventMultipleClicks);
   }
 };
