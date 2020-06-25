@@ -1,6 +1,6 @@
 # Getting started
 
-### NPM
+## NPM
 
 ```bash
 $ npm i ajaxinate
@@ -16,9 +16,9 @@ new Ajaxinate({
 });
 ```
 
-### Manual installation
+## Manual installation
 
-*IMPORTANT! If you are using Ajaxinate without a package manager, use [**the v2 branch**](https://github.com/Elkfox/Ajaxinate/tree/v2) ↗*
+**IMPORTANT! If you are using Ajaxinate without a package manager, use** [**the v2 branch**](https://github.com/Elkfox/Ajaxinate/tree/v2) **↗**
 
 1. Add ajaxinate.min.js to the assets folder of your shopify theme, or add it to your vendor files if you are using Slate or a similar method.
 2. Add the ajaxinate.min.js script src tag before the closing body tag, or defer its loading:
@@ -58,3 +58,4 @@ new Ajaxinate({
    ```
 
 5. Configure your settings as desired.
+
