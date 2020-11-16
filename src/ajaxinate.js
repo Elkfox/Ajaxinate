@@ -139,7 +139,7 @@ Ajaxinate.prototype.loadMore = function loadMore() {
     }
   }.bind(this);
 
-  this.request.open('GET', this.nextPageUrl);
+  this.request.open('GET', this.nextPageUrl, true);
   this.request.responseType = 'document';
   this.request.send();
 };
