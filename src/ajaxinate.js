@@ -128,12 +128,19 @@ Ajaxinate.prototype.loadMore = function loadMore() {
 
     if (typeof newPagination === 'undefined') {
       this.removePaginationElement();
+      document.dispatchEvent(new CustomEvent('ajaxinate.scroll:end'));
     } else {
       this.paginationElement.innerHTML = newPagination.innerHTML;
 
       if (this.settings.callback && typeof this.settings.callback === 'function') {
         this.settings.callback(this.request.responseXML);
       }
+
+      document.dispatchEvent(new CustomEvent('ajaxinate.page:load', { 
+        detail: {
+          content: newContainer
+        }
+      }));
 
       this.initialize();
     }
